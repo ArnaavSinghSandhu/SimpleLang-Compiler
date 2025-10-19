@@ -1,28 +1,58 @@
 SimpleLang Compiler
 
 Description:
-SimpleLang is a custom language front-end compiler written in Java. It currently implements parsing, semantic analysis, and type checking for integer and boolean types. The compiler supports function definitions, expressions with operators (+ - * /), and maintains a symbol table for variables and functions. Lexer and code generation stages are yet to be implemented, making this project a work-in-progress.
+SimpleLang is a custom compiler front-end written in Java. It currently implements parsing, semantic analysis, and type checking for integer and boolean types. The compiler supports function definitions, arithmetic and comparison expressions, and maintains a symbol table to track variables and function scopes. Lexer and code generation stages are planned but not yet implemented.
 
-Features Implemented:
+Features Implemented
 
-Construction of Parse Trees and Abstract Syntax Trees (AST)
+Parse Tree Construction
 
-Expression parsing with operator precedence and parentheses
+Parses a list of tokens into a hierarchical Parse Tree structure.
 
-Semantic analysis and type checking for variables, functions, and expressions
+Supports nested statements and expressions.
 
-Symbol table and scope management
+Abstract Syntax Tree (AST) Generation
 
-Function handling with return type validation
+Converts the Parse Tree into an AST suitable for semantic analysis.
 
-Planned Features:
+Handles arithmetic expressions with proper operator precedence (+ - * /) and parentheses.
 
-Lexer for tokenizing input source code
+Semantic Analysis
 
-Code generation for converting AST to executable code
+Checks variable declarations and usage.
 
-Usage:
-Currently, the project runs as a Java program that parses tokens and checks types. Full compilation to executable code is under development.
+Supports function definitions and verifies return types.
 
-License:
+Ensures type consistency across expressions and assignments.
+
+Symbol Table and Scope Management
+
+Maintains symbol tables for each function scope.
+
+Tracks variables, functions, and operators separately.
+
+Ensures identifiers are declared before usage.
+
+Expression Evaluation Preparation
+
+Prepares nodes for potential code generation.
+
+Handles binary operations and comparisons between variables and constants.
+
+Planned Features
+
+Lexer: Tokenization of source code into meaningful tokens.
+
+Code Generation: Transform AST into executable code or bytecode.
+
+Usage
+
+Written entirely in Java and can be executed using standard Java commands.
+
+Currently, the compiler front-end reads tokens, builds ASTs, and performs semantic checks.
+
+Full compilation to executable code will be available after the lexer and code generation stages are implemented.
+
+License
+
 Private. Redistribution or modification is not allowed.
