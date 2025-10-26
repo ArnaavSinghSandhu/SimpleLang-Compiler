@@ -1,58 +1,69 @@
-SimpleLang Compiler
+Custom Expression Compiler & x86 Code Generator 🖥️⚡
 
-Description:
-SimpleLang is a custom compiler front-end written in Java. It currently implements parsing, semantic analysis, and type checking for integer and boolean types. The compiler supports function definitions, arithmetic and comparison expressions, and maintains a symbol table to track variables and function scopes. Lexer and code generation stages are planned but not yet implemented.
+A lightweight compiler that parses a custom programming language, generates an abstract syntax tree (AST), and produces x86-style assembly code. Designed for learning compiler design and experimenting with recursive expression evaluation, function calls, and arithmetic operations.
 
-Features Implemented
+Features
 
-Parse Tree Construction
+Supports function definitions and calls
 
-Parses a list of tokens into a hierarchical Parse Tree structure.
+Arithmetic expressions: +, -, *, /
 
-Supports nested statements and expressions.
+Variable assignments and type tracking
 
-Abstract Syntax Tree (AST) Generation
+Recursive AST traversal for code generation
 
-Converts the Parse Tree into an AST suitable for semantic analysis.
+Generates readable x86-like assembly for debugging and learning
 
-Handles arithmetic expressions with proper operator precedence (+ - * /) and parentheses.
+Handles return statements and expression evaluation in functions
 
-Semantic Analysis
+OUTPUT:-
+<img width="1679" height="961" alt="Screenshot 2025-10-26 at 12 09 33 PM" src="https://github.com/user-attachments/assets/f0a2001a-3980-494f-acac-592fdf2e2b56" />
 
-Checks variable declarations and usage.
 
-Supports function definitions and verifies return types.
+How It Works
 
-Ensures type consistency across expressions and assignments.
+Parsing: Converts your custom language into a tree of statements and expressions.
 
-Symbol Table and Scope Management
+Symbol Table Management: Tracks variables and function scopes.
 
-Maintains symbol tables for each function scope.
+Recursive Code Generation: Converts the AST into x86-style instructions.
 
-Tracks variables, functions, and operators separately.
+Function Calls: Supports arguments, return values, and nested expressions.
 
-Ensures identifiers are declared before usage.
+Getting Started
 
-Expression Evaluation Preparation
+Clone the repo:
 
-Prepares nodes for potential code generation.
+gh repo clone ArnaavSinghSandhu/SimpleLang-Compiler
+cd Parser/src;
 
-Handles binary operations and comparisons between variables and constants.
 
-Planned Features
+Compile the project:
 
-Lexer: Tokenization of source code into meaningful tokens.
+javac Parser/*.java
 
-Code Generation: Transform AST into executable code or bytecode.
 
-Usage
+Run the compiler with an cli interface:
 
-Written entirely in Java and can be executed using standard Java commands.
+java Parser.Main
 
-Currently, the compiler front-end reads tokens, builds ASTs, and performs semantic checks.
 
-Full compilation to executable code will be available after the lexer and code generation stages are implemented.
+Check generated_code.asm for your output assembly.
 
-License
+Future Improvements
 
-Private. Redistribution or modification is not allowed.
+Add loops and conditionals (if, while)
+
+Optimize register allocation
+
+Support more complex data types
+
+Generate real x86 machine code
+
+Why This Project?
+
+Learn the fundamentals of compiler design
+
+Understand AST traversal and code generation
+
+Experiment with assembly-level thinking in a safe, educational environme
